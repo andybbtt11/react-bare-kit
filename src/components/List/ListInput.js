@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import actions from '../../actions/Actions';
 import "./List.scss";
 
 class ListInput extends Component {
@@ -20,7 +19,7 @@ class ListInput extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.props.listItems);
-		this.props.dispatch(actions.addList(this.state.inputText));
+		this.props.addList(this.state.inputText);
 	}
 
 	render() {

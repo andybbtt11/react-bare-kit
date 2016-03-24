@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import Logo from '../Logo/Logo';
-import ListInput from './ListInput'
-import { connect } from 'react-redux'
+import ListInput from './ListInput';
+import ListItem from './ListItem';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import actions from '../../actions/Actions';
 import "./List.scss";
 
 class List extends Component {
@@ -11,11 +14,17 @@ class List extends Component {
 		return(
 			<div className="list">
 				<Logo/>
-				<ListInput dispatch={this.props.dispatch} listItems={this.props.listItems}/>
+				<ListInput addList={this.props.actions.addList} listItems={this.props.listItems}/>
 				<ul>
 					{
 						this.props.listItems.map((item) => {
-							return <li key={item.id}>{item.name}</li>
+							return (
+								<ListItem 
+									key={item.id} 
+									item={item} 
+									completeList={this.props.actions.completeList} 
+									deleteList={this.props.actions.deleteList}/>
+							)
 						})
 					}
 				</ul>
@@ -29,4 +38,10 @@ function mapStateToProps(state) {
 	return state;
 }
 
-export default connect(mapStateToProps) (List)
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators(actions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (List)

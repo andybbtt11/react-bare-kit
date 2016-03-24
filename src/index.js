@@ -8,7 +8,8 @@ let initialState = {
 	listItems: [
 		{
 			name: "No items found, enter one above to begin",
-			id: 0
+			id: 0,
+			completed: false
 		}
 	]
 };
