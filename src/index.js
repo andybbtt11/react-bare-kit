@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import List from './components/List/List';
+import App from './components/App/App';
 import configureStore from './stores/Store'
 import { Provider } from 'react-redux'
 
@@ -18,7 +18,7 @@ let store = configureStore(initialState);
 
 render(
 	<Provider store={store}>
-		<List/>
+		<App/>
 	</Provider>, 
 	appMountId
 );
