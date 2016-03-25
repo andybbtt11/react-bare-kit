@@ -12,12 +12,13 @@ import "../List/List.scss";
 class App extends Component {
 
 	render() {
-		return(
+		return (
 			<main className="app">
 				<Logo/>
 				<div className="list">
 					<ListInput addList={this.props.actions.addList} listItems={this.props.listItems}/>
-					<List completeList={this.props.actions.completeList} deleteList={this.props.actions.deleteList} listItems={this.props.listItems}/>
+					<List completeList={this.props.actions.completeList} deleteList={this.props.actions.deleteList}
+						  listItems={this.props.listItems}/>
 				</div>
 			</main>
 		)

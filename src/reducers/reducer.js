@@ -1,10 +1,10 @@
 function getId(state) {
   return state.listItems.reduce((maxId, todo) => {
-    return Math.max(todo.id, maxId)
-  }, -1) + 1
+        return Math.max(todo.id, maxId)
+      }, -1) + 1
 }
 
-let reducer = function(state, action) {
+let reducer = function (state, action) {
 
   switch (action.type) {
 
@@ -17,19 +17,19 @@ let reducer = function(state, action) {
         }, ...state.listItems]
       })
     case 'COMPLETE_LIST':
-    	return Object.assign({}, state, {
-    		listItems: state.listItems.map((item) => {
-    			return item.id === action.id ? 
-    				Object.assign({}, item, {completed: !item.completed}) : item
-    		})
-    	})
-    case 'DELETE_LIST': 
-    	return Object.assign({}, state, {
-    		listItems: state.listItems.filter((item) => {
-    			return item.id !== action.id
-    		})
-    	})
-    default: 
+      return Object.assign({}, state, {
+        listItems: state.listItems.map((item) => {
+          return item.id === action.id ?
+              Object.assign({}, item, {completed: !item.completed}) : item
+        })
+      })
+    case 'DELETE_LIST':
+      return Object.assign({}, state, {
+        listItems: state.listItems.filter((item) => {
+          return item.id !== action.id
+        })
+      })
+    default:
       return state;
   }
 }

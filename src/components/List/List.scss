@@ -1,24 +1,24 @@
 .list {
-	max-width: 300px;
-	display: block;
-	margin: 0 auto;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
 
-	ul {
-		padding: 0;
-		margin: 20px 0 0 0;
-		list-style: none;
-		border: 1px solid black;
-	}
+  ul {
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+    border: 1px solid black;
+  }
 
-	li {
-		margin: 0;
-		padding: 10px 0;
-		width: 100%;
-		text-align: center;
-		border-bottom: 1px solid black;
+  li {
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
 
-		&:last-child {
-			border: none;
-		}
-	}
+    &:last-child {
+      border: none;
+    }
+  }
 }
